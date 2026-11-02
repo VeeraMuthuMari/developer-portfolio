@@ -1,0 +1,9 @@
+<template>
+  <section class="page-hero"><div class="container"><span class="eyebrow"><span></span> MY TOOLKIT</span><h1>Tools I use to make<br><em>ideas work.</em></h1><p>A practical set of technologies for building full-stack applications.</p></div></section>
+  <section class="section container"><SectionHeading eyebrow="TECHNICAL SKILLS" title="My development" accent="toolkit." description="I choose technologies based on the problem, maintainability and the experience we want to deliver." /><div class="skills-grid"><article v-for="(group, index) in skillGroups" :key="group.title" class="skill-card"><div class="skill-card-head"><span class="skill-icon"><i :class="`mdi ${group.icon}`"></i></span><span class="skill-index">0{{ index + 1 }}</span></div><h3>{{ group.title }}</h3><div class="skill-tags"><span v-for="skill in group.skills" :key="skill">{{ skill }}</span></div></article></div></section>
+  <section class="section section-muted"><div class="container process-row"><div><span class="eyebrow">HOW I WORK</span><h2>Good software is built with <em>good habits.</em></h2></div><div class="process-list"><div><b>01</b><span><strong>Understand</strong><small>Clarify the problem and requirements.</small></span></div><div><b>02</b><span><strong>Build</strong><small>Keep the solution simple and maintainable.</small></span></div><div><b>03</b><span><strong>Refine</strong><small>Test, improve and deliver with care.</small></span></div></div></div></section>
+</template>
+<script setup>
+import { skillGroups } from '../data/skills'
+import SectionHeading from '../components/SectionHeading.vue'
+</script>
